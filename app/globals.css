@@ -1,0 +1,285 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  /* Minimal corporate — logo blue + lime accent on white */
+  --color-ink: #0b1c2c;
+  --color-ink-muted: #5a6b7a;
+  --color-mist: #f5f7fa;
+  --color-stone: #e6ebf0;
+  --color-moss: #2164a2;
+  --color-moss-deep: #0d3d73;
+  --color-leaf: #8fc63f;
+  --color-field: #418fd9;
+  --color-field-soft: #a8c8e4;
+  --color-sky-dusk: #6b7f8f;
+  --color-surface: #ffffff;
+  --color-white: #ffffff;
+  --background: var(--color-surface);
+  --foreground: var(--color-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-mist: var(--color-mist);
+  --color-cream: var(--color-mist);
+  --color-sand: var(--color-stone);
+  --color-stone: var(--color-stone);
+  --color-moss: var(--color-moss);
+  --color-moss-deep: var(--color-moss-deep);
+  --color-leaf: var(--color-leaf);
+  --color-field: var(--color-field);
+  --color-field-soft: var(--color-field-soft);
+  --color-cedar: var(--color-field);
+  --color-cedar-soft: var(--color-field-soft);
+  --color-sky-dusk: var(--color-sky-dusk);
+  --color-surface: var(--color-surface);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.bg-atmosphere {
+  background: var(--color-mist);
+}
+
+/* Neutral scrim only — no blue tint so it doesn't fight the logo */
+.bg-hero-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.2) 45%,
+      rgba(0, 0, 0, 0.28) 100%
+    );
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slow-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.9s ease-out both;
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 18s ease-out forwards;
+}
+
+@keyframes mist-drift {
+  0% {
+    transform: translate3d(-4%, 2%, 0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(3%, -3%, 0) scale(1.08);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(-2%, 1%, 0) scale(1.02);
+    opacity: 0.4;
+  }
+}
+
+.animate-mist-drift {
+  animation: mist-drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes accent-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-accent-draw {
+  transform-origin: left center;
+  animation: accent-draw 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+@keyframes bounce-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.35rem);
+  }
+}
+
+.animate-bounce-y {
+  animation: bounce-y 1.6s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(0.4rem);
+    opacity: 0.9;
+  }
+}
+
+.animate-scroll-cue {
+  animation: scroll-cue 2s ease-in-out infinite;
+}
+
+/* Hero service-name cycle — width locked, no overflow clip on glyphs */
+.hero-cycle {
+  display: inline-grid;
+  vertical-align: baseline;
+}
+
+.hero-cycle__sizer {
+  grid-column: 1;
+  grid-row: 1;
+  visibility: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-cycle__viewport {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-cycle__word {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-cycle__word--out {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: hero-cycle-out 480ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-cycle__word--in {
+  animation: hero-cycle-in 480ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes hero-cycle-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-0.55em);
+    opacity: 0;
+  }
+}
+
+@keyframes hero-cycle-in {
+  from {
+    transform: translateY(0.55em);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-slow-zoom,
+  .animate-mist-drift,
+  .animate-accent-draw,
+  .animate-bounce-y,
+  .animate-scroll-cue,
+  .hero-cycle__word--out,
+  .hero-cycle__word--in {
+    animation: none !important;
+  }
+
+  .animate-slow-zoom {
+    transform: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prose-will {
+  --tw-prose-body: var(--color-ink-muted);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-links: var(--color-moss);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-bullets: var(--color-moss);
+}

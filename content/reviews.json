@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "howToUpdate": "Preferred: Google Business Profile API live sync (npm run gbp:setup — see README). This file is the fallback when GBP OAuth is not configured or the API fails."
+  },
+  "source": "google",
+  "googleReviewsUrl": "",
+  "aggregateRating": null,
+  "reviewCount": null,
+  "reviews": []
+}

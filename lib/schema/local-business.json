@@ -1,0 +1,68 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://www.will-irr.com/#business",
+  "name": "Willingham Irrigation",
+  "url": "https://www.will-irr.com/",
+  "telephone": "+19404689178",
+  "email": "case@will-irr.com",
+  "image": "https://www.will-irr.com/images/willingham-1.png",
+  "description": "Licensed irrigation repair and maintenance serving Benbrook, Fort Worth, and nearby North Texas communities. License #LI0030140. Also offering holiday lighting and landscape lighting.",
+  "areaServed": [
+    { "@type": "City", "name": "Benbrook", "addressRegion": "TX" },
+    { "@type": "City", "name": "Fort Worth", "addressRegion": "TX" },
+    { "@type": "City", "name": "Cleburne", "addressRegion": "TX" },
+    { "@type": "City", "name": "Aledo", "addressRegion": "TX" },
+    { "@type": "City", "name": "White Settlement", "addressRegion": "TX" },
+    { "@type": "City", "name": "Palmilla Springs", "addressRegion": "TX" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Benbrook",
+    "addressRegion": "TX",
+    "postalCode": "76126",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 32.6732,
+    "longitude": -97.4606
+  },
+  "priceRange": "$$",
+  "knowsAbout": [
+    "Irrigation repair",
+    "Sprinkler repair",
+    "Irrigation maintenance",
+    "Holiday lighting",
+    "Landscape lighting"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Irrigation and outdoor services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sprinkler and irrigation repair",
+          "areaServed": "Benbrook, Fort Worth, and surrounding TX cities"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Holiday lighting installation and takedown"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Landscape lighting design and installation"
+        }
+      }
+    ]
+  },
+  "sameAs": []
+}
