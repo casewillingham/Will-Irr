@@ -12,7 +12,7 @@ export const site = {
   portalUrl:
     "https://client.housecallpro.com/customer_portal/request-link?token=e58f7193b64443c28a3778721017892b",
   /** Public Google Business Profile reviews page — used for “Read all reviews” links */
-  googleReviewsUrl: "",
+  googleReviewsUrl: "https://maps.app.goo.gl/Bm1uUy7epMKJtCSy6",
   serviceArea:
     "Benbrook, White Settlement, Palmilla Springs, Weatherford, Fort Worth, and communities across the Greater Fort Worth area",
   tagline:
