@@ -53,7 +53,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
-      <body className="flex min-h-full flex-col bg-white font-body text-ink antialiased">
+      <body className="flex min-h-full flex-col overflow-x-clip bg-white font-body text-ink antialiased">
         <JsonLd data={localBusiness} />
         <Header />
         <main className="flex-1">{children}</main>

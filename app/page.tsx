@@ -77,7 +77,7 @@ export default function HomePage() {
           <Reveal delayMs={60}>
             <Link
               href="/services#memberships"
-              className="inline-flex items-center justify-center bg-moss px-5 py-3 text-[13px] font-semibold tracking-wide text-white transition-colors hover:bg-moss-deep"
+              className="inline-flex min-h-11 w-full items-center justify-center bg-moss px-5 py-3 text-[13px] font-semibold tracking-wide text-white transition-colors hover:bg-moss-deep sm:w-auto"
             >
               Compare plans →
             </Link>

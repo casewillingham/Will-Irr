@@ -40,7 +40,7 @@ export function HeroVisual({ imageSrc, imageAlt }: Props) {
   return (
     <div
       ref={ref}
-      className="relative aspect-[4/3] min-h-[16rem] overflow-hidden sm:min-h-[22rem] lg:aspect-auto lg:min-h-full"
+      className="relative aspect-[4/3] min-h-[14rem] overflow-hidden sm:min-h-[20rem] lg:aspect-auto lg:min-h-full"
       onMouseMove={(e) => onMove(e.clientX, e.clientY)}
       onMouseLeave={() => onLeave()}
     >

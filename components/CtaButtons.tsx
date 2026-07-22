@@ -6,7 +6,7 @@ type Props = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 px-5 py-3 text-[13px] font-semibold tracking-wide transition-colors duration-200";
+  "inline-flex items-center justify-center gap-2 px-5 py-3.5 text-[13px] font-semibold tracking-wide transition-colors duration-200 min-h-11";
 
 export function BookNowButton({ className = "", label = "Book Now" }: Props) {
   return (
@@ -28,7 +28,12 @@ export function TextButton({ className = "", label }: Props) {
       href={site.smsHref}
       className={`${base} border bg-transparent ${className}`}
     >
-      {label ?? `Text ${site.phoneDisplay}`}
+      {label ?? (
+        <>
+          <span className="sm:hidden">Text us</span>
+          <span className="hidden sm:inline">Text {site.phoneDisplay}</span>
+        </>
+      )}
     </a>
   );
 }

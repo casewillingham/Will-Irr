@@ -13,7 +13,8 @@ const SLIDE_MS = 480;
 
 /**
  * Scrolls service names, then holds on Irrigation.
- * No overflow clip — settled glyphs stay fully visible.
+ * On small screens the phrase stacks so “Landscape lighting done right.”
+ * never forces horizontal overflow.
  */
 export function HeroServiceCycle() {
   const [index, setIndex] = useState(0);
@@ -54,12 +55,16 @@ export function HeroServiceCycle() {
   }, [outgoing]);
 
   return (
-    <h1 className="mt-4 max-w-lg font-display text-[2.5rem] font-semibold leading-[1.15] tracking-tight text-ink md:text-[3.25rem]">
+    <h1 className="mt-4 max-w-lg font-display text-[2rem] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[2.5rem] md:text-[3.25rem]">
       <span className="hero-cycle">
         <span className="hero-cycle__sizer" aria-hidden>
           Landscape lighting
         </span>
-        <span className="hero-cycle__viewport" aria-live="polite" aria-atomic="true">
+        <span
+          className="hero-cycle__viewport"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           {outgoing !== null && (
             <span className="hero-cycle__word hero-cycle__word--out" aria-hidden>
               {SERVICES[outgoing]}
@@ -77,7 +82,7 @@ export function HeroServiceCycle() {
           </span>
         </span>
       </span>{" "}
-      done right.
+      <span className="hero-cycle__tail">done right.</span>
     </h1>
   );
 }

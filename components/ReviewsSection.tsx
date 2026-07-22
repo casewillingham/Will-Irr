@@ -27,7 +27,7 @@ export async function ReviewsSection({ limit = 6, className = "" }: Props) {
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-moss">
                 Customer reviews
               </p>
-              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+  <h2 className="mt-3 font-display text-[1.75rem] font-semibold tracking-tight text-ink sm:text-3xl md:text-4xl">
                 Trusted by homeowners across Benbrook & Fort Worth
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-ink-muted">
@@ -49,18 +49,18 @@ export async function ReviewsSection({ limit = 6, className = "" }: Props) {
                 </div>
               ) : null}
             </div>
-            <div className="flex shrink-0 flex-wrap gap-3">
+            <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
               {googleUrl ? (
                 <Link
                   href={googleUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center border border-stone bg-white px-5 py-3 text-[13px] font-semibold tracking-wide text-ink transition-colors hover:bg-[#e8edf2]"
+                  className="inline-flex min-h-11 w-full items-center justify-center border border-stone bg-white px-5 py-3 text-[13px] font-semibold tracking-wide text-ink transition-colors hover:bg-[#e8edf2] sm:w-auto"
                 >
                   Read all on Google
                 </Link>
               ) : null}
-              <BookNowButton className="px-5 py-3 text-[13px]" />
+              <BookNowButton className="w-full px-5 py-3 text-[13px] sm:w-auto" />
             </div>
           </div>
         </Reveal>

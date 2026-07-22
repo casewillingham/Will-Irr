@@ -158,17 +158,17 @@ export function WeatherTip() {
           )}
         </div>
 
-        <div className="flex shrink-0 items-center gap-3">
+        <div className="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:flex-row sm:items-center sm:gap-3">
           {!loading && tip ? (
             <BookNowButton
               label={tip.ctaLabel}
-              className="px-4 py-2.5 text-[13px]"
+              className="w-full px-4 py-2.5 text-[13px] sm:w-auto"
             />
           ) : null}
           <button
             type="button"
             onClick={dismiss}
-            className="text-[13px] font-medium text-ink-muted transition-colors hover:text-ink"
+            className="min-h-11 px-2 text-[13px] font-medium text-ink-muted transition-colors hover:text-ink sm:min-h-0"
             aria-label="Dismiss weather tip"
           >
             Dismiss

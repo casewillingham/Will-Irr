@@ -149,9 +149,9 @@ export function Header() {
 
         <button
           type="button"
-          className="border border-stone bg-white/80 px-3 py-1.5 text-[13px] font-medium text-ink lg:hidden"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center border border-stone bg-white/80 px-3.5 text-[13px] font-medium text-ink lg:hidden"
           aria-expanded={open}
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
         >
           {open ? "Close" : "Menu"}
@@ -208,18 +208,18 @@ export function Header() {
                 </Link>
               ),
             )}
-            <div className="mt-5 flex flex-col gap-2">
-              <BookNowButton className="justify-center" />
+            <div className="mt-5 flex flex-col gap-2 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
+              <BookNowButton className="w-full justify-center" />
+              <TextButton className="w-full justify-center border-stone text-ink" />
               <a
                 href={site.portalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center border border-stone px-5 py-3 text-[13px] font-semibold tracking-wide text-ink"
+                className="inline-flex min-h-11 w-full items-center justify-center border border-stone px-5 py-3 text-[13px] font-semibold tracking-wide text-ink"
                 onClick={() => setOpen(false)}
               >
                 Customer Portal
               </a>
-              <TextButton className="justify-center border-stone text-ink" />
             </div>
           </nav>
         </div>

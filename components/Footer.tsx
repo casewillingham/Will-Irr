@@ -7,6 +7,7 @@ import { Logo } from "@/components/Logo";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/holiday-lighting", label: "Holiday lighting" },
   { href: "/landscape-lighting", label: "Landscape lighting" },
   { href: "/about", label: "About" },
@@ -35,14 +36,14 @@ export function Footer() {
           <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-white/65">
             {site.tagline}
           </p>
-          <div className="mt-5 flex flex-wrap items-center gap-4">
-            <BookNowButton />
+          <div className="mt-5 flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
+            <BookNowButton className="w-full sm:w-auto" />
             <Image
               src="/images/photos/txia-member.png"
               alt="Texas Irrigation Association member"
               width={72}
               height={63}
-              className="h-10 w-auto"
+              className="h-10 w-auto max-w-[4.5rem] shrink-0 self-start object-contain"
               unoptimized
             />
           </div>
@@ -55,12 +56,12 @@ export function Footer() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/45">
             Explore
           </p>
-          <ul className="mt-3 columns-2 gap-x-6 space-y-2 text-[14px] md:columns-1">
+          <ul className="mt-3 columns-2 gap-x-6 text-[14px] md:columns-1">
             {footerLinks.map((link) => (
               <li key={link.href} className="break-inside-avoid">
                 <Link
                   href={link.href}
-                  className="text-white/75 transition-colors hover:text-white"
+                  className="inline-flex min-h-10 items-center text-white/75 transition-colors hover:text-white"
                 >
                   {link.label}
                 </Link>

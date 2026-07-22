@@ -21,28 +21,28 @@ export function Hero({
   imageAlt = "Pop-up sprinkler watering a manicured lawn",
 }: Props) {
   return (
-    <section className="relative flex min-h-svh flex-col bg-mist pt-16 md:pt-[4.25rem]">
+    <section className="relative flex flex-col bg-mist pt-16 md:pt-[4.25rem] lg:min-h-svh">
       <div className="grid min-h-0 flex-1 lg:grid-cols-2">
-        <div className="relative flex flex-col justify-center px-5 py-14 pb-20 md:px-10 md:py-20 lg:px-14 lg:pr-12 xl:pl-[max(3.5rem,calc((100vw-72rem)/2+2rem))]">
+        <div className="relative flex flex-col justify-center px-5 py-10 md:px-10 md:py-20 lg:px-14 lg:pr-12 xl:pl-[max(3.5rem,calc((100vw-72rem)/2+2rem))]">
           <p className="animate-fade-in text-[11px] font-semibold uppercase tracking-[0.16em] text-moss">
             Greater Fort Worth
           </p>
           <HeroServiceCycle />
           <p
-            className="animate-fade-up mt-6 max-w-md text-[1.1rem] leading-relaxed text-ink-muted"
+            className="animate-fade-up mt-5 max-w-md text-[1.05rem] leading-relaxed text-ink-muted md:mt-6 md:text-[1.1rem]"
             style={{ animationDelay: "200ms" }}
           >
             {subline}
           </p>
           <div
-            className="animate-fade-up mt-8 flex flex-wrap gap-3"
+            className="animate-fade-up mt-7 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap"
             style={{ animationDelay: "320ms" }}
           >
-            <BookNowButton className="transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0" />
-            <TextButton className="border-stone bg-white/60 text-ink transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white active:translate-y-0" />
+            <BookNowButton className="w-full transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 sm:w-auto" />
+            <TextButton className="w-full border-stone bg-white/60 text-ink transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white active:translate-y-0 sm:w-auto" />
           </div>
           <div
-            className="animate-fade-up mt-8 flex items-center gap-4"
+            className="animate-fade-up mt-7 flex items-center gap-4 sm:mt-8"
             style={{ animationDelay: "420ms" }}
           >
             <Image
@@ -50,7 +50,7 @@ export function Hero({
               alt="Texas Irrigation Association member"
               width={72}
               height={63}
-              className="h-12 w-auto"
+              className="h-11 w-auto max-w-[4.5rem] shrink-0 object-contain sm:h-12"
               unoptimized
             />
             <p className="max-w-[12rem] text-[12px] leading-snug text-ink-muted">

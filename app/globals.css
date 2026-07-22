@@ -179,15 +179,14 @@ body {
   animation: scroll-cue 2s ease-in-out infinite;
 }
 
-/* Hero service-name cycle — width locked, no overflow clip on glyphs */
+/* Hero service-name cycle — width locked on sm+, stacks on narrow phones */
 .hero-cycle {
-  display: inline-grid;
-  vertical-align: baseline;
+  display: block;
+  max-width: 100%;
 }
 
 .hero-cycle__sizer {
-  grid-column: 1;
-  grid-row: 1;
+  display: none;
   visibility: hidden;
   white-space: nowrap;
   pointer-events: none;
@@ -195,16 +194,46 @@ body {
 }
 
 .hero-cycle__viewport {
-  grid-column: 1;
-  grid-row: 1;
   position: relative;
   display: block;
-  white-space: nowrap;
+  max-width: 100%;
 }
 
 .hero-cycle__word {
   display: block;
-  white-space: nowrap;
+}
+
+.hero-cycle__tail {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .hero-cycle {
+    display: inline-grid;
+    vertical-align: baseline;
+    max-width: none;
+  }
+
+  .hero-cycle__sizer {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .hero-cycle__viewport {
+    grid-column: 1;
+    grid-row: 1;
+    white-space: nowrap;
+    max-width: none;
+  }
+
+  .hero-cycle__word {
+    white-space: nowrap;
+  }
+
+  .hero-cycle__tail {
+    display: inline;
+  }
 }
 
 .hero-cycle__word--out {
